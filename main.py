@@ -81,10 +81,10 @@ if __name__ == '__main__':
         quit()
 
     try:
-        data_by_type = make_info(data)
+        data_by_type = make_info(data, today)
     except:
         send_msg(token, traceback.format_exc().replace('\n', '<br>'))
         quit()
 
-    msg = make_msg(data_by_type, today)
+    msg = make_msg(data_by_type)
     send_msg(token, msg)
