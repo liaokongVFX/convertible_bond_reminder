@@ -3,7 +3,7 @@ name: Convertible Bond Reminder
 on:
   push:
   schedule:
-    - cron: '0 */1 * * *'
+    - cron: '*/1 * * * *'
 
 jobs:
   build:
