@@ -39,9 +39,8 @@ def make_info(data, today):
     return data_by_type
 
 
-def make_msg(data_by_type, today):
-    msg = u'<p>今日日期：{}</p>'.format(today.strftime('%Y-%m-%d'))
-    msg += u'<p>最近可申购{}只可转债</p>'.format(len(data_by_type[u'申购']))
+def make_msg(data_by_type):
+    msg = u'<p>最近可申购{}只可转债</p>'.format(len(data_by_type[u'申购']))
     if data_by_type[u'申购']:
         msg += u'<ul>{}</ul>'.format(''.join(
             [u'<li>{} {} {}%</li>'.format(x['name'], x['time'], x['rt']) for x
@@ -81,7 +80,7 @@ if __name__ == '__main__':
         quit()
 
     try:
-        data_by_type = make_info(data, today)
+        data_by_type = make_info(data)
     except:
         send_msg(token, u'<p>可转债接口数据格式有所变动</p>')
         quit()
