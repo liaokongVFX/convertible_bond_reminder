@@ -69,6 +69,7 @@ def send_msg(token, content):
 
 if __name__ == '__main__':
     import sys
+    import traceback
 
     token = sys.argv[1]
     today = datetime.now()
@@ -82,7 +83,7 @@ if __name__ == '__main__':
     try:
         data_by_type = make_info(data)
     except:
-        send_msg(token, u'<p>可转债接口数据格式有所变动</p>')
+        send_msg(token, traceback.format_exc().replace('\n', '<br>'))
         quit()
 
     msg = make_msg(data_by_type, today)
