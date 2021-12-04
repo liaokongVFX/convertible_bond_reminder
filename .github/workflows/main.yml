@@ -1,9 +1,9 @@
 name: Convertible Bond Reminder
 
 on:
-
   push:
-    branches: [ main ]
+  schedule:
+    - cron: '0 * * * * ? *'
 
 jobs:
   build:
@@ -18,7 +18,7 @@ jobs:
         with:
           python-version: 2.7
 
-      - name: install
+      - name: install libs
         run: pip install requests
 
       - name: set reminder message
