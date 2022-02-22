@@ -87,5 +87,5 @@ if __name__ == '__main__':
         quit()
 
     msg = make_msg(data_by_type)
-    print(msg)
+
     send_msg(token, msg)
