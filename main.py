@@ -56,7 +56,7 @@ def make_msg(data_by_type):
 
 
 def send_msg(token, content):
-    url = 'http://pushplus.hxtrip.com/send'
+    url = 'http://www.pushplus.plus/send'
     res = requests.post(url, data={
         'token': token,
         'title': u'可转债提醒',
