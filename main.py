@@ -61,7 +61,7 @@ def send_msg(token, content):
         'token': token,
         'title': u'可转债提醒',
         'content': content,
-        'template': 'json',
+        'template': 'html',
         'topic': 'my'
     })
     return res.text
