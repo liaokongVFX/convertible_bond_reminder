@@ -24,7 +24,7 @@ def make_info(data, today):
     for row in data['rows']:
         cell = row['cell']
         zz_status = cell['progress_nm']
-        if '发审委/上市委通过' in zz_status or u'上市' not in zz_status and u'申购' not in zz_status:
+        if u'发审委/上市委通过' in zz_status or u'上市' not in zz_status and u'申购' not in zz_status:
             continue
 
         zz_time = zz_status[:10] + ' 23:00:00'
